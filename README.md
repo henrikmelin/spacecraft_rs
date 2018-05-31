@@ -43,6 +43,23 @@ Alternatively you can download individual kernels for any specific interval, alt
 
 Since spacecraft missions are funded by public resources, the data they produced are as a rule available free of charge to the public after a certain time period. Both NASA and ESA have archives with vast amounts of data on them, provided in a variety of file-formats. 
 
+
+## Calculated parameters
+
+For the centre and each corner of each pixel, the software will calculate the following parameters: 
+
+* `lat` Planetocentric latitude (degrees)
+* `lon` West longitude (degrees)
+* `lat_graphic` Planetographic latitude (degrees)
+* `localtime` The local time (hours) 
+* `emission` Emission angle - the angle between the boresight vector and the surface normal (degrees)
+* `phase` Phase angle - the angle between the sun vector and boresight (degrees)
+* `incidence` Incidence angle - the angle between the sun vector and the surface normal (degrees)
+* `rayheight` The closest distance to the limb of the boresight vector, negative numbers are on the planet (km) 
+* `lat_occ` The limb planetocentric latitude (degrees).  
+* `lon_occ` The limb longitude (degrees)
+* `losdist` THe distance between the spaceship and the point that intersects the surface of the body (km)
+
 ## An Example - Juno JIRAM
 
 The Jovian Infrared Auroral Mapper ([JIRAM](http://www.iaps.inaf.it/solarsystem/jiram/about-jiram/)) is the near-infrared imager and spectrograph onboard the Juno spacecraft, currently in orbit about Jupiter. It also has a spectroscopic mode. It has two imaging modes, one at 3.5 microns capturing auroral emissions, and one at 5 microns, capturing thermal emissions from the deep troposphere. In this example, we will use an observation at 5 microns and assign a set of geometries to each of the pixels that make up the image. 
