@@ -10,11 +10,14 @@ I'm always interested in hearing thoughts and comments - feel free to contact me
 
 ## Requirements 
 
-### Python dependencies 
+### 1. Python dependencies 
 
-One of many beautiful aspect of open source software is that we can drink from wells that we did not dig. 
+One of many beautiful aspect of open source software is that we can drink from wells that we did not dig. Here, we are using a number of existing modules: 
+* [numpy](http://www.numpy.org/)
+* [spiceypy](https://github.com/AndrewAnnex/SpiceyPy)
 
-### NAIF pointing kernels
+
+### 2. NAIF pointing kernels
 
 The software will not function without the spacecraft pointing information provided by the [NASA Navigation and Ancillary Information Facility](https://naif.jpl.nasa.gov/naif/) (NAIF) kernels (see the website for a wealth of information and tutorials). These are a collection of files describing the geometry and the pointing of a spacecraft relative to some solar system body for a specific time. Any remote sensing instruments, such as cameras and spectrometers, are defined relative to the spacecraft, with each having their individual kernel. You can get these kernels from the [NAIF FTP site](ftp://naif.jpl.nasa.gov/pub/naif/), for a whole host of spacecraft missions. 
 
@@ -36,7 +39,7 @@ juno_pointing_kernels.load_kernels(dir, timestr = time)
 
 Alternatively you can download individual kernels for any specific interval, although that requires some tedious parsing of the `ck/` and `spk/` filenames. 
 
-### Mission data
+### 3. Mission data
 
 Since spacecraft missions are funded by public resources, the data they produced are as a rule available free of charge to the public after a certain time period. Both NASA and ESA have archives with vast amounts of data on them, provided in a variety of file-formats. 
 
@@ -50,6 +53,12 @@ In this example we will assign geometry to each pixel of the following image fro
 
 ```
 https://pds-atmospheres.nmsu.edu/PDS/data/jnojir_2007/DATA/JIR_IMG_RDR_2017191T083944_V01.IMG
+```
+
+We will also need the associated label (LBL) file:
+
+```
+https://pds-atmospheres.nmsu.edu/PDS/data/jnojir_2007/DATA/JIR_IMG_RDR_2017191T083944_V01.LBL
 ```
 
 This gorgeous image looks like this:
