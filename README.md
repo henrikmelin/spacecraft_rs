@@ -29,12 +29,12 @@ wget -nH --cut-dirs=4 -m ftp://naif.jpl.nasa.gov/pub/naif/JUNO/
 Once this behemoth is downloaded, you can use `juno_kernel_loader.py` to automatically load the required set of kernels for a particular time. 
 
 ```
-import juno_pointing_kernels
+import spacecraft_rs as srs
 
 # Say that the wget command above downloaded to /path/to/kernels/JUNO/, then:
-time = '2017-01-02 12:34:56'
-dir  = '/path/to/kernels/JUNO/'
-juno_pointing_kernels.load_kernels(dir, timestr = time)
+timestr = '2017-01-02 12:34:56'
+dir     = '/path/to/kernels/JUNO/'
+kl      = srs.juno_kernel_loader(dir, timestr = timestr)
 ```
 
 Alternatively you can download individual kernels for any specific interval, although that requires some tedious parsing of the `ck/` and `spk/` filenames. 
