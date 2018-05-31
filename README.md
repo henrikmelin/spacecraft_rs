@@ -52,7 +52,7 @@ In this example we will assign geometry to each pixel of the following image fro
 https://pds-atmospheres.nmsu.edu/PDS/data/jnojir_2007/DATA/JIR_IMG_RDR_2017191T083944_V01.IMG
 ```
 
-
+![Jupiter by JIRAM](https://github.com/henrikmelin/spacecraft_rs/resources/JIR_IMG_RDR_2017191T083944_V01.IMG.png)
 
 
 
