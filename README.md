@@ -64,7 +64,7 @@ For the centre and each corner of each pixel, the software will calculate the fo
 
 The Jovian Infrared Auroral Mapper ([JIRAM](http://www.iaps.inaf.it/solarsystem/jiram/about-jiram/)) is the near-infrared imager and spectrograph onboard the Juno spacecraft, currently in orbit about Jupiter. It also has a spectroscopic mode. It has two imaging modes, one at 3.5 microns capturing auroral emissions, and one at 5 microns, capturing thermal emissions from the deep troposphere. In this example, we will use an observation at 5 microns and assign a set of geometries to each of the pixels that make up the image. 
 
-The JUNO JIRAM data is stored on the Planetary Data System (PDS), and data from the Juno perijoves (closest approach) can be downloaded from [here](e.g. ftp://pds-atmospheres.nmsu.edu/PDS/data/jnojir_2003/). 
+The Juno JIRAM data is stored on the Planetary Data System (PDS), and data from the Juno perijoves (closest approach) can be downloaded from [here](ftp://pds-atmospheres.nmsu.edu/PDS/data/), with the JIRAM directories having a prefix of `jnojir_2*`.
 
 In this example we will assign geometry to each pixel of the following image from the seventh perijove:
 
