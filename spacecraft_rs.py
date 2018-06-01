@@ -81,12 +81,12 @@ class instrument_engine :
         self.ypxoffset = 0.5 * self.pyscale / 1000.0
 
         # Generate a key mapping, so that we know which index is what. 
-        self.keys = ['lat', 'lon', 'lat_occ', 'lon_occ', 'lat_graphic', 'lon_graphic','phase', 'emission', 'incidence', 'localtime', 'losdist', 'rayheight', 'bodyintercept']
+        self.keys = ['lat', 'lon', 'limb_lat', 'limb_lon', 'lat_graphic', 'lon_graphic','phase', 'emission', 'incidence', 'localtime', 'losdist', 'limb_distance', 'bodyintercept']
 
         self.map = {}
         for key, value in enumerate(self.keys) : self.map[value] = key
 
-        self.angles = ['lat', 'lon', 'lat_occ', 'lon_occ', 'lat_graphic', 'lon_graphic','phase', 'emission', 'incidence']
+        self.angles = ['lat', 'lon', 'limb_lat', 'limb_lon', 'lat_graphic', 'lon_graphic','phase', 'emission', 'incidence']
 
 
     def set_emission_altitude(self, emission_altitude) : 
@@ -265,10 +265,10 @@ class instrument_engine :
 
         # Get the intercept to calculate the radius of of the target 
         normal = spice.surfpt(origin, 1000.0 * nearpoint, self.radii[0], self.radii[1], self.radii[2])
-        ret[self.map['rayheight']] = rayradius - spice.vnorm(normal)
+        ret[self.map['limb_distance']] = rayradius - spice.vnorm(normal)
     
         # Calculate the 'occultation' latitude and longitude 
-        ret[self.map['bodyintercept']], ret[self.map['lon_occ']], ret[self.map['lat_occ']] = spice.reclat(nearpoint) 
+        ret[self.map['bodyintercept']], ret[self.map['limb_lat']], ret[self.map['limb_lon']] = spice.reclat(nearpoint) 
 
         # Test if the boresight intersects with our target surface 
         try: 
@@ -299,7 +299,7 @@ class instrument_engine :
                     ret[self.map[key]] = np.rad2deg(ret[self.map[key]])
 
         # Makes sure longitudes wrap 0 to 360, spice returns the Earth-like -180 to 180. 
-        longitudes = ['lon', 'lon_occ', 'lon_graphic']
+        longitudes = ['lon', 'limb_lon', 'lon_graphic']
         for key in longitudes : 
             ret[self.map[key]] = ret[self.map[key]] % 360
 

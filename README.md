@@ -55,10 +55,10 @@ For the centre and each corner of each pixel, the software will calculate the fo
 * `emission` Emission angle - the angle between the boresight vector and the surface normal (degrees)
 * `phase` Phase angle - the angle between the sun vector and boresight (degrees)
 * `incidence` Incidence angle - the angle between the sun vector and the surface normal (degrees)
-* `rayheight` The closest distance to the limb of the boresight vector, negative numbers are on the planet (km) 
-* `lat_occ` The limb planetocentric latitude (degrees).  
-* `lon_occ` The limb longitude (degrees)
-* `losdist` THe distance between the spaceship and the point that intersects the surface of the body (km)
+* `limb_distance` The closest distance between the limb and the boresight vector, negative numbers are on the planet (km) 
+* `limb_lat` The limb planetocentric latitude (degrees).  
+* `limb_lon` The limb longitude (degrees)
+* `losdist` The distance between the spaceship and the point that intersects the surface of the body (km)
 
 ## An Example - Juno JIRAM
 
