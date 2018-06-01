@@ -122,6 +122,9 @@ Which produces the result:
 
 ![Jupiter by JIRAM, with a grid!](https://github.com/henrikmelin/spacecraft_rs/blob/master/resources/JIR_IMG_RDR_2017191T083944_V01_grid.png)
 
+Of course, all calculated parameters are available at this point, e.g. the `limb_distance`:
+
+![Jupiter by JIRAM, with a grid!](https://github.com/henrikmelin/spacecraft_rs/blob/master/resources/JIR_IMG_RDR_2017191T083944_V01_rayheight.png)
 
 
 
